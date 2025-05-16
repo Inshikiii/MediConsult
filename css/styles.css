@@ -1,0 +1,304 @@
+/* Custom Variables */
+:root {
+  --primary: #4A89DC;
+  --primary-dark: #3B76C4;
+  --secondary: #6C757D;
+  --success: #37BC9B;
+  --info: #5BC0DE;
+  --warning: #F6BB42;
+  --danger: #DA4453;
+  --light: #F8F9FA;
+  --dark: #343A40;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-700: #495057;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+}
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--gray-800);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Custom Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* Feature Icons */
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon i {
+  font-size: 1.75rem;
+}
+
+/* Process Steps */
+.process-number {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.process-step {
+  position: relative;
+}
+
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--gray-300);
+  z-index: -1;
+}
+
+.process-step:last-child::after {
+  display: none;
+}
+
+/* Doctor Cards */
+.doctor-card-img {
+  height: 280px;
+  object-fit: cover;
+}
+
+.doctor-card-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-card-sm-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-card-sm-img-container {
+  height: 100%;
+  max-height: 180px;
+  overflow: hidden;
+}
+
+/* Card Hover Effects */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Booking Steps */
+.booking-steps .step {
+  position: relative;
+  padding: 1rem;
+}
+
+.booking-steps .step.active .step-number {
+  background-color: var(--primary);
+  color: white;
+}
+
+.booking-steps .step-number {
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-200);
+  color: var(--gray-600);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* Booking Doctor Card */
+.booking-doctor-card {
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.booking-doctor-card:hover {
+  border-color: var(--primary) !important;
+}
+
+/* Video Consultation */
+.video-consultation {
+  height: 80vh;
+  max-height: 700px;
+}
+
+.video-main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-placeholder {
+  flex-grow: 1;
+  background-color: var(--gray-100);
+  border-radius: 0.25rem;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 75%;
+}
+
+.message.sent {
+  margin-left: auto;
+}
+
+.message.sent .message-content {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 1rem 1rem 0 1rem;
+}
+
+.message.received .message-content {
+  background-color: var(--gray-200);
+  border-radius: 1rem 1rem 1rem 0;
+}
+
+.message .message-content {
+  padding: 0.75rem;
+}
+
+.message .message-content p {
+  margin-bottom: 0;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: -12px;
+  width: 1px;
+  background-color: var(--gray-300);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+/* Consultation Notes */
+.consultation-interface {
+  height: 80vh;
+  max-height: 700px;
+}
+
+/* Divider with text */
+.divider-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.divider-text::before,
+.divider-text::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.divider-text::before {
+  margin-right: 0.5em;
+}
+
+.divider-text::after {
+  margin-left: 0.5em;
+}
+
+/* Consultation Types */
+.consultation-types i {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .process-step::after {
+    display: none;
+  }
+  
+  .doctor-card-img {
+    height: 200px;
+  }
+  
+  .doctor-card-sm-img-container {
+    max-height: 120px;
+  }
+}

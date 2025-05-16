@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - MediConsult</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-heart-pulse-fill text-primary me-2"></i>
+        <span class="fw-bold">MediConsult</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="booking.html">Book Appointment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Signup Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <div class="text-center mb-4">
+                <div class="mb-3">
+                  <i class="bi bi-heart-pulse-fill text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h2 class="h3 mb-2">Create your account</h2>
+                <p class="text-muted">Join MediConsult for online doctor consultations</p>
+              </div>
+
+              <ul class="nav nav-pills mb-4 justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" id="patient-tab" data-bs-toggle="pill" href="#patient">Patient</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="doctor-tab" data-bs-toggle="pill" href="#doctor">Doctor</a>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <!-- Patient Signup Form -->
+                <div class="tab-pane fade show active" id="patient">
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Create password" required>
+                        <small class="text-muted">Must be at least 8 characters</small>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" required>
+                          <option value="" selected disabled>Select gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                          <option value="prefer-not">Prefer not to say</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                          <label class="form-check-label" for="agreeTerms">
+                            I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <a href="patient-dashboard.html" class="btn btn-primary py-2">Create Account</a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Doctor Signup Form -->
+                <div class="tab-pane fade" id="doctor">
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="doctorFirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="doctorFirstName" placeholder="Enter first name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="doctorLastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="doctorLastName" placeholder="Enter last name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="doctorEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="doctorEmail" placeholder="name@example.com" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="doctorPhone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="doctorPhone" placeholder="Enter phone number" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="doctorPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="doctorPassword" placeholder="Create password" required>
+                        <small class="text-muted">Must be at least 8 characters</small>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="doctorConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="doctorConfirmPassword" placeholder="Confirm password" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="specialization" class="form-label">Specialization</label>
+                        <select class="form-select" id="specialization" required>
+                          <option value="" selected disabled>Select specialization</option>
+                          <option value="cardiology">Cardiology</option>
+                          <option value="dermatology">Dermatology</option>
+                          <option value="neurology">Neurology</option>
+                          <option value="pediatrics">Pediatrics</option>
+                          <option value="psychiatry">Psychiatry</option>
+                          <option value="orthopedics">Orthopedics</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="experience" class="form-label">Years of Experience</label>
+                        <input type="number" class="form-control" id="experience" min="1" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="licenseNumber" class="form-label">Medical License Number</label>
+                        <input type="text" class="form-control" id="licenseNumber" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="clinic" class="form-label">Hospital/Clinic Affiliation (Optional)</label>
+                        <input type="text" class="form-control" id="clinic">
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="doctorAgreeTerms" required>
+                          <label class="form-check-label" for="doctorAgreeTerms">
+                            I agree to the <a href="#" class="text-primary">Terms of Service</a>, <a href="#" class="text-primary">Privacy Policy</a>, and certify that all provided information is accurate
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="alert alert-info" role="alert">
+                          <i class="bi bi-info-circle-fill me-2"></i>
+                          Your account will be verified within 1-3 business days after submitting the required documentation.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <a href="doctor-dashboard.html" class="btn btn-primary py-2">Create Doctor Account</a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="mt-4 text-center">
+                <p>Already have an account? <a href="login.html" class="text-primary">Sign in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 small text-center text-md-start">
+          &copy; 2025 MediConsult. All rights reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end small">
+          <a href="#" class="text-muted me-3">Privacy Policy</a>
+          <a href="#" class="text-muted me-3">Terms of Service</a>
+          <a href="#" class="text-muted">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

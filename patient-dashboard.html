@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard - MediConsult</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-heart-pulse-fill text-primary me-2"></i>
+        <span class="fw-bold">MediConsult</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="booking.html">Book Appointment</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-bell-fill"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                2
+              </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><h6 class="dropdown-header">Notifications</h6></li>
+              <li><a class="dropdown-item" href="#">Appointment reminder: Dr. Sarah Johnson - Tomorrow 9:00 AM</a></li>
+              <li><a class="dropdown-item" href="#">New message from Dr. Emily Chen</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">View all notifications</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="rounded-circle me-2" width="32" height="32" alt="Patient">
+              <span>Rebecca</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <li><a class="dropdown-item" href="#">Medical Records</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="index.html">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="container py-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-3 mb-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <div class="text-center mb-3">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="rounded-circle mb-3" width="80" height="80" alt="Patient">
+              <h5 class="mb-0">Rebecca Thompson</h5>
+              <p class="text-muted small">Patient ID: P-10324</p>
+              <div class="d-grid gap-2">
+                <a href="#" class="btn btn-sm btn-outline-primary">Edit Profile</a>
+              </div>
+            </div>
+            <hr>
+            <ul class="nav flex-column nav-pills">
+              <li class="nav-item">
+                <a class="nav-link active d-flex align-items-center" href="#">
+                  <i class="bi bi-grid-1x2-fill me-2"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="#">
+                  <i class="bi bi-calendar-check me-2"></i>
+                  <span>Appointments</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="#">
+                  <i class="bi bi-chat-left-text me-2"></i>
+                  <span>Messages</span>
+                  <span class="badge bg-danger rounded-pill ms-auto">2</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="#">
+                  <i class="bi bi-file-earmark-medical me-2"></i>
+                  <span>Medical Records</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="#">
+                  <i class="bi bi-capsule me-2"></i>
+                  <span>Prescriptions</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="#">
+                  <i class="bi bi-credit-card me-2"></i>
+                  <span>Payments</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="#">
+                  <i class="bi bi-gear me-2"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h6 class="mb-3">Need Help?</h6>
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center justify-content-center">
+                <i class="bi bi-question-circle me-2"></i>
+                <span>Help Center</span>
+              </a>
+              <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center justify-content-center">
+                <i class="bi bi-chat-dots me-2"></i>
+                <span>Contact Support</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col-lg-9">
+        <!-- Welcome Banner -->
+        <div class="card border-0 shadow-sm mb-4 bg-primary text-white">
+          <div class="card-body p-4">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h4 class="mb-1">Welcome back, Rebecca!</h4>
+                <p class="mb-0">Your next appointment is scheduled for tomorrow at 9:00 AM with Dr. Sarah Johnson.</p>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <a href="booking.html" class="btn btn-light">Book New Appointment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="rounded-circle bg-primary bg-opacity-10 p-3 me-3">
+                    <i class="bi bi-calendar2-check text-primary fs-4"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Upcoming</h6>
+                    <h4 class="mb-0">2</h4>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">You have 2 upcoming appointments scheduled.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                    <i class="bi bi-check-circle text-success fs-4"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Completed</h6>
+                    <h4 class="mb-0">8</h4>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">You've completed 8 consultations this year.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                    <i class="bi bi-file-earmark-text text-warning fs-4"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Prescriptions</h6>
+                    <h4 class="mb-0">3</h4>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">You have 3 active prescriptions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Upcoming Appointments -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Upcoming Appointments</h5>
+            <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+          </div>
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <span class="badge bg-primary-subtle text-primary p-2 d-block">Tomorrow</span>
+                  </div>
+                  <div class="col-md-3 mb-2 mb-md-0">
+                    <div class="d-flex align-items-center">
+                      <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" class="rounded-circle me-2" width="40" height="40" alt="Dr. Sarah Johnson">
+                      <div>
+                        <h6 class="mb-0">Dr. Sarah Johnson</h6>
+                        <p class="text-muted small mb-0">Cardiology</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Date</small>
+                    <span class="fw-medium">Jan 10, 2025</span>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Time</small>
+                    <span class="fw-medium">9:00 AM</span>
+                  </div>
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <span class="badge bg-success-subtle text-success p-2">Video</span>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#consultationModal">Join</button>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" href="#">Reschedule</a></li>
+                      <li><a class="dropdown-item" href="#">Cancel</a></li>
+                      <li><a class="dropdown-item" href="#">Add to Calendar</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <span class="badge bg-primary-subtle text-primary p-2 d-block">Jan 15</span>
+                  </div>
+                  <div class="col-md-3 mb-2 mb-md-0">
+                    <div class="d-flex align-items-center">
+                      <img src="https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg" class="rounded-circle me-2" width="40" height="40" alt="Dr. Emily Chen">
+                      <div>
+                        <h6 class="mb-0">Dr. Emily Chen</h6>
+                        <p class="text-muted small mb-0">Pediatrics</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Date</small>
+                    <span class="fw-medium">Jan 15, 2025</span>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Time</small>
+                    <span class="fw-medium">2:30 PM</span>
+                  </div>
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <span class="badge bg-info-subtle text-info p-2">Text</span>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <button class="btn btn-sm btn-outline-primary me-1">Remind</button>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" href="#">Reschedule</a></li>
+                      <li><a class="dropdown-item" href="#">Cancel</a></li>
+                      <li><a class="dropdown-item" href="#">Add to Calendar</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Messages -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Recent Messages</h5>
+            <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+          </div>
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" class="rounded-circle" width="40" height="40" alt="Dr. Sarah Johnson">
+                  </div>
+                  <div class="col-md-3 mb-2 mb-md-0">
+                    <h6 class="mb-0">Dr. Sarah Johnson</h6>
+                    <p class="text-muted small mb-0">Cardiology</p>
+                  </div>
+                  <div class="col-md-6 mb-2 mb-md-0 text-truncate">
+                    <p class="mb-0">Hello Rebecca, I've reviewed your latest ECG results and everything looks good...</p>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <span class="badge bg-primary rounded-pill">New</span>
+                    <small class="text-muted d-block mt-1">10:34 AM</small>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <img src="https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg" class="rounded-circle" width="40" height="40" alt="Dr. Emily Chen">
+                  </div>
+                  <div class="col-md-3 mb-2 mb-md-0">
+                    <h6 class="mb-0">Dr. Emily Chen</h6>
+                    <p class="text-muted small mb-0">Pediatrics</p>
+                  </div>
+                  <div class="col-md-6 mb-2 mb-md-0 text-truncate">
+                    <p class="mb-0">Don't forget to administer the medication as prescribed. Let me know if there's any change...</p>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <span class="badge bg-primary rounded-pill">New</span>
+                    <small class="text-muted d-block mt-1">Yesterday</small>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <img src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg" class="rounded-circle" width="40" height="40" alt="Dr. James Wilson">
+                  </div>
+                  <div class="col-md-3 mb-2 mb-md-0">
+                    <h6 class="mb-0">Dr. James Wilson</h6>
+                    <p class="text-muted small mb-0">Neurology</p>
+                  </div>
+                  <div class="col-md-6 mb-2 mb-md-0 text-truncate">
+                    <p class="mb-0">Thank you for completing the post-consultation survey. I'm glad to hear your headaches have improved...</p>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <small class="text-muted d-block mt-1">Jan 5</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Medical Records -->
+        <div class="card border-0 shadow-sm">
+          <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">My Medical Records</h5>
+            <div>
+              <button class="btn btn-sm btn-primary me-2">Upload Document</button>
+              <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <i class="bi bi-file-earmark-medical-fill text-primary fs-3"></i>
+                  </div>
+                  <div class="col-md-5 mb-2 mb-md-0">
+                    <h6 class="mb-0">Blood Test Results</h6>
+                    <p class="text-muted small mb-0">Uploaded by Dr. Sarah Johnson</p>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Date</small>
+                    <span>Jan 5, 2025</span>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Type</small>
+                    <span>PDF Document</span>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <button class="btn btn-sm btn-outline-primary me-1">View</button>
+                    <button class="btn btn-sm btn-outline-secondary">
+                      <i class="bi bi-download"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <i class="bi bi-file-earmark-image-fill text-primary fs-3"></i>
+                  </div>
+                  <div class="col-md-5 mb-2 mb-md-0">
+                    <h6 class="mb-0">Chest X-Ray</h6>
+                    <p class="text-muted small mb-0">Uploaded by Radiology Dept</p>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Date</small>
+                    <span>Dec 20, 2024</span>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Type</small>
+                    <span>Image</span>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <button class="btn btn-sm btn-outline-primary me-1">View</button>
+                    <button class="btn btn-sm btn-outline-secondary">
+                      <i class="bi bi-download"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item px-4 py-3">
+                <div class="row align-items-center">
+                  <div class="col-md-1 mb-2 mb-md-0">
+                    <i class="bi bi-file-earmark-pdf-fill text-primary fs-3"></i>
+                  </div>
+                  <div class="col-md-5 mb-2 mb-md-0">
+                    <h6 class="mb-0">Prescription - Medication</h6>
+                    <p class="text-muted small mb-0">Issued by Dr. Sarah Johnson</p>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Date</small>
+                    <span>Dec 15, 2024</span>
+                  </div>
+                  <div class="col-md-2 mb-2 mb-md-0">
+                    <small class="text-muted d-block">Type</small>
+                    <span>PDF Document</span>
+                  </div>
+                  <div class="col-md-2 text-md-end">
+                    <button class="btn btn-sm btn-outline-primary me-1">View</button>
+                    <button class="btn btn-sm btn-outline-secondary">
+                      <i class="bi bi-download"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Consultation Modal -->
+  <div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consultationModalLabel">Video Consultation with Dr. Sarah Johnson</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="video-consultation">
+            <div class="row g-0">
+              <div class="col-md-9">
+                <div class="video-main-container">
+                  <div class="video-placeholder d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi bi-camera-video-off-fill text-muted mb-3" style="font-size: 3rem;"></i>
+                    <p class="text-muted">Waiting for doctor to join the call...</p>
+                    <div class="spinner-border text-primary mt-2" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <div class="video-controls">
+                    <button class="btn btn-light rounded-circle"><i class="bi bi-mic-fill"></i></button>
+                    <button class="btn btn-light rounded-circle"><i class="bi bi-camera-video-fill"></i></button>
+                    <button class="btn btn-danger rounded-circle"><i class="bi bi-telephone-x-fill"></i></button>
+                    <button class="btn btn-light rounded-circle"><i class="bi bi-chat-fill"></i></button>
+                    <button class="btn btn-light rounded-circle"><i class="bi bi-three-dots"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="chat-container">
+                  <div class="chat-header bg-light p-3">
+                    <h6 class="mb-0">Chat</h6>
+                  </div>
+                  <div class="chat-messages p-3">
+                    <div class="chat-message-time text-center mb-3">
+                      <span class="badge bg-light text-dark">Today, 9:00 AM</span>
+                    </div>
+                    <div class="message received mb-3">
+                      <div class="message-content">
+                        <p>Hello Rebecca, I'll be with you shortly. Please get ready with any questions you have.</p>
+                      </div>
+                      <small class="text-muted">Dr. Johnson • 9:00 AM</small>
+                    </div>
+                    <div class="message sent mb-3">
+                      <div class="message-content">
+                        <p>Thank you, Dr. Johnson. I'm ready and have my notes prepared.</p>
+                      </div>
+                      <small class="text-muted">You • 9:01 AM</small>
+                    </div>
+                  </div>
+                  <div class="chat-input p-3 bg-light">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Type a message...">
+                      <button class="btn btn-primary" type="button"><i class="bi bi-send-fill"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
