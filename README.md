@@ -27,6 +27,3 @@ This is a **clean, responsive, and minimalistic frontend-only website** designed
 - Bootstrap Icons  
 
 ---
-
-## 📂 Project Structure
-
